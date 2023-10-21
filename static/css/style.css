@@ -1,0 +1,101 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+} 
+body{
+background-image:url("/img/ww.jpg"); 
+background-size: cover;
+}
+nav{
+max-width: 900px;
+margin:auto;
+border-radius:20px;
+background:rgba(0,0,0,.7); 
+margin-top:50px;
+}
+.menu-horizontal{
+list-style:none;
+display:flex;
+justify-content:space-around;
+}
+.menu-horizontal li a{
+display:block;
+text-decoration:none;
+padding:15px 20px;
+color:white;
+}
+.menu-horizontal li a:hover{
+color:rgb(135, 215, 233);
+}
+.menu-vertical{
+position: absolute;
+display:none;
+list-style: none;
+width: 200px;
+background:rgb(0,0,0,0.7);
+}
+.menu-horizontal li:hover .menu-vertical{
+display: block;
+}
+
+.menu-vertical li:hover{
+background: black;
+}
+.menu-vertical li a{
+display: block;
+text-decoration:none;
+color:white;
+padding:15px 15px 15px 20px;
+}
+#facebook:hover{
+ color:blue;
+}
+#instagram:hover{
+  color:rgb(199,97,199);
+}
+#whatsapp:hover{
+color:green;
+}
+.submenu{
+position: absolute;
+display:none;
+list-style: none;
+width: 200px;
+background:rgb(0,0,0,0.7);
+}
+.menu-horizontal li:hover .menu-vertical li:hover .submenu{
+display: block;
+}
+.flex{
+display: flex;
+}
+
+@font-face{
+font-family:'diminuto';
+src:url('/fuentes/Neodex.f');
+}
+
+h1{
+color:white;
+font: 20px 'diminuto';
+text-align: center;
+line-height: 100px;
+}
+
+section{
+  margin:50px auto;
+  color:white;
+  background:rgba(0,0,0,.5);
+}
+h2{
+  font-weight:bold;
+  font-size:40px;
+  margin:10px;
+}
+
+section p{
+  font-weight:bold;
+  font-size:30px;
+  margin-left:15px;
+}

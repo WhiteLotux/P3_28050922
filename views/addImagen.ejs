@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imagen</title>
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
+</head>
+<body>
+ <h1 class="login">Agregar Imagen</h1>
+<div id="login">
+
+    <form class="login_form" action="/addImagen" method="post" enctype="multipart/form-data">
+
+            <label for='imagen'>Imagen</label>
+            <input type="file" name="img" id="img" placeholder="Imagen">
+    
+            <label>Destacado</label>
+            <input type="text" name="destacado" placeholder="Destacado" id='destacado'>
+
+            <input type="submit" value="agg Imagen" id="sendImg">
+    </form>
+    <a href="/productos" id='botonProductos'>Volver</a>
+</div>
+</body>
+</html>
+
+
+

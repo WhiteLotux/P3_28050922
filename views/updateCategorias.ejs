@@ -1,0 +1,69 @@
+
+
+<!--------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <meta charset="utf-8">
+    <meta charset="iso-8559-1"/>
+    <meta name= "description" content="pagina de enseñanza"/>
+    <meta name="keywords" content="html5,javascript,diseño web"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
+   <title>Categorias</title>
+   <link rel="stylesheet" href="update.css">
+   <style>
+   		body{
+   			display: flex;
+   			justify-content: center;
+   			align-items: center;
+   			flex-direction: column;
+   			position: relative;
+   		}
+   		.crear2{
+   			position: absolute;
+   			top: 5px;
+   			left: 38%;
+   			border-radius: 20px;
+   			box-shadow: -10px -10px 30px rgb(7.9688, 247.03, 245.04,.4) inset;
+   			padding: 4px;
+   		}
+   		.caja{
+   			display: flex;
+   			flex-direction: column;
+   		}
+   		label{
+   			margin-bottom: 10px;
+   		}
+   		.input2{
+   			transform: translateX(-2%);
+   		}
+   </style>
+</head>
+ <h1 class="crear2" id="crear">Actualizar Categoria</h1>
+
+<form class="form2" action="/updateCategoria/<%=modelo.id%>" method="post">
+
+<div class="caja">
+
+<!------------------------------------------>
+<label for="nombre">Nombre</label>
+
+<input class="input input2" type="text" autofocus name="nombre" placeholder="Nombre" />
+
+<!------------------------------------------>
+
+</div>
+
+<!------------------------------------------->
+<div id="cancelar">
+	<input class="actua actua2" type="submit" value="Actualizar" id="update">
+    <a class="actua actua2" href="/categorias" id="botonProductos">Volver</a>
+</div>
+
+
+</form>
+</body>
+</html>

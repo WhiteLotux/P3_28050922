@@ -1,0 +1,209 @@
+@font-face{
+	font-family:'Gamer';
+	src:url('/fuentes/Gamer.ttf');
+}
+@font-face{
+	font-family:'rata';
+	src:url('/fuentes/Florensa.ttf');
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+h1{
+	text-align:center;
+	line-height:100px;
+	font-weight:bold;
+	color:black;
+	font:50px 'Gamer';
+	margin: 0 0 20px;
+}
+
+body{
+	background-image:url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-3138445_08.jpg');
+	background-size:cover;
+	background-attachment:fixed;
+	background-position: center;
+	min-height: 100vh;
+}
+
+form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+.flex-principal{
+	display:flex;
+	flex-direction:column;
+	width: 50%;
+	height:75%;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	background:rgb(0,0,0,.4);
+	border-radius: 10px;
+	border: 3px solid white;
+	box-shadow: 0 0 60px rgba(0,0,0,.8) inset;
+}
+
+input{
+	color: #fff;
+	margin-top: 10px;
+	border-radius:10px;
+	width: 50%;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	background: transparent;	
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	padding:10px;
+}
+
+input::placeholder{
+	color:black;
+}
+
+#cancelar{
+	display: flex;
+	justify-content: space-between;
+	height:10%;
+	margin-bottom: 30px;
+}
+
+#editorcentrall{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+}
+
+label{
+	margin-top: 20px;
+	font-weight:bold;
+	font-size:25px;
+	text-transform: uppercase;
+	font-family: rata;
+}
+
+.input{
+	margin-top: 10px;
+	border-radius: 10px;
+	padding: 5px 0;
+	width: 150%;
+	border-right: 4px solid black;
+	border-bottom: 4px solid black;
+	font-weight: 1000;
+	text-align: center;
+}
+
+.h-auto{
+	height: auto;
+}
+
+.actua{
+	text-transform: uppercase;
+	margin-top: 20px;
+	font-weight: black;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	letter-spacing: 2px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(40, 40, 40);
+	transform: skewX(-25deg);
+	padding: 15px;
+	border-right: 10px solid lawngreen;
+	cursor: pointer;
+	font-family: Gamer, sans-serif;
+	transition: .5s all ease;
+}
+
+.actua:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+	border-bottom: 1px solid red;
+}
+
+.actua2{
+	text-transform: uppercase;
+	margin-top: 20px;
+	font-weight: black;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	letter-spacing: 2px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(40, 40, 40);
+	transform: skewX(-25deg);
+	padding: 15px;
+	border-right: 10px solid lawngreen;
+	border-bottom: 1px solid lawngreen;
+	cursor: pointer;
+	font-family: Gamer, sans-serif;
+	transition: .5s all ease;
+	border-radius: 10px;
+}
+
+.actua2:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+	border-bottom: 1px solid red;
+}
+
+.login_form{
+	display: flex;
+	flex-direction:column;
+	border:1px solid black;
+	width:50%;
+	margin:50px auto;
+	backdrop-filter: blur(6px);
+}
+#sendImg{
+transition: all 1s;
+margin-bottom: 40px;
+margin-top: 20px;
+background: transparent;
+backdrop-filter: blur(6px);
+}
+#sendImg:hover{
+background-color:rgb(185, 184, 189);
+}
+
+#botonProductos{
+	border-radius: 10px;
+	text-transform: uppercase;
+	margin-top: 35px;
+	font-weight: bolder;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	letter-spacing: 3px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(60, 60, 60);
+	transform: skewX(-25deg);
+	padding: 10px;
+	border-right: 10px solid lawngreen;
+	cursor: pointer;
+	font-family: Gamer, sans-serif;
+	transition: .5s all ease;
+	border-bottom: 1px solid lawngreen;
+}
+
+#botonProductos:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+	border-bottom: 1px solid red;
+}

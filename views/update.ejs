@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <meta charset="utf-8">
+    <meta charset="iso-8559-1"/>
+    <meta name= "description" content="pagina de enseñanza"/>
+    <meta name="keywords" content="html5,javascript,diseño web"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
+   <title>Update</title>
+</head>
+
+ <h1 id="crear">Actualizar Producto</h1>
+
+<form action="/update/<%=modelo.producto_id%>" method="post">
+<div class='flex-principal'>
+<!------------------------------------------->
+<div id="editorcentrall">
+<!------------------------------------------>
+<label for="nombre">nombre</label>
+
+<input class="input" type="text" autofocus name="nombre" value="<%=modelo.nombre%>"/>
+
+<!------------------------------------------>
+
+<label for="codigo">codigo</label>
+
+<input class="input" name="codigo" type="number" value="<%= modelo.codigo%>"/>
+
+<!--------------------------------------------->
+
+<label for="precio">precio</label>
+<input class="input" type="number" name="precio" value="<%= modelo.precio %>">
+
+<!----------------------------------------------------->
+<label for="descripcion">descripcion</label>
+<input class="input" type="text" name="descripcion" value="<%= modelo.descripcion %>">
+
+<!----------------------------------------------------->
+<label for="calidad">calidad</label>
+<input class="input" type="text" name="calidad" value="<%= modelo.calidad %>">
+<!----------------------------------------------------->
+<label for="cantidad">Cantidad</label>
+<input class="input" type="number" name="cantidad" value="<%= modelo.cantidad %>">
+<!----------------------------------------------------->
+</div>
+ 
+<!------------------------------------------->
+<div id="cancelar">
+	<input class="actua" type="submit" value="Actualizar" id="update">
+    <a class="actua2" href="/productos" id="botonProductos">Productos</a>
+</div>
+
+</div>
+</form>
+</body>
+<%- include('footer') -%>
+</html>
+

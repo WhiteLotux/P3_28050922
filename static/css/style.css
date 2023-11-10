@@ -1,101 +1,208 @@
-*{
-  padding:0;
-  margin:0;
-  box-sizing:border-box;
-} 
-body{
-background-image:url("/img/ww.jpg"); 
-background-size: cover;
-}
-nav{
-max-width: 900px;
-margin:auto;
-border-radius:20px;
-background:rgba(0,0,0,.7); 
-margin-top:50px;
-}
-.menu-horizontal{
-list-style:none;
-display:flex;
-justify-content:space-around;
-}
-.menu-horizontal li a{
-display:block;
-text-decoration:none;
-padding:15px 20px;
-color:white;
-}
-.menu-horizontal li a:hover{
-color:rgb(135, 215, 233);
-}
-.menu-vertical{
-position: absolute;
-display:none;
-list-style: none;
-width: 200px;
-background:rgb(0,0,0,0.7);
-}
-.menu-horizontal li:hover .menu-vertical{
-display: block;
-}
-
-.menu-vertical li:hover{
-background: black;
-}
-.menu-vertical li a{
-display: block;
-text-decoration:none;
-color:white;
-padding:15px 15px 15px 20px;
-}
-#facebook:hover{
- color:blue;
-}
-#instagram:hover{
-  color:rgb(199,97,199);
-}
-#whatsapp:hover{
-color:green;
-}
-.submenu{
-position: absolute;
-display:none;
-list-style: none;
-width: 200px;
-background:rgb(0,0,0,0.7);
-}
-.menu-horizontal li:hover .menu-vertical li:hover .submenu{
-display: block;
-}
-.flex{
-display: flex;
-}
-
 @font-face{
-font-family:'diminuto';
-src:url('/fuentes/Neodex.f');
+	font-family:'Gamer';
+	src:url('/fuentes/Gamer.ttf');
+}
+
+*, *:before, *:after{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body{
+	color: #fff;
+	background-image:url('https://sodimac.decolovers.cl/blog/_next/image?url=https%3A%2F%2Fapideco.bitbanglab.cl%2Fuploads%2Fblog%2F_imagen_portada%2Fky3wEJ-portada-ESCRITORIO-VIDRIO-L_2836440-3346137-2.jpg&w=1920&q=75');
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-x: hidden;
+	min-width:100vw;
+	min-height:100vh;
+	position: relative;
 }
 
 h1{
-color:white;
-font: 20px 'diminuto';
-text-align: center;
-line-height: 100px;
+	text-align:center;
+	line-height:100px;
+	font-weight:bold;
+	color:black;
+	font:50px 'Gamer';
 }
 
-section{
-  margin:50px auto;
-  color:white;
-  background:rgba(0,0,0,.5);
+
+
+h1{
+	font-size: 5em;
+	color: white;
 }
+
 h2{
-  font-weight:bold;
-  font-size:40px;
-  margin:10px;
+	text-shadow: 2px 4px 1px lawngreen;
 }
 
-section p{
-  font-weight:bold;
-  font-size:30px;
-  margin-left:15px;
+.header{
+	max-height: 100vh;
+	position: relative;
+	background-image: url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-3138445_08.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 10px 10px 0px lawngreen;
+	z-index: 1;
+}
+
+.header-wrap{
+	background-color: rgba(124, 252, 0, .2);
+	height: 500px;
+	width: 100%;
+	position: relative;
+	top: -105vh;
+	backdrop-filter: blur(6px);
+	z-index: 4;
+}
+
+#h1{
+	position: relative;
+	max-width: 100vw;
+	height: 100vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	z-index: 10;
+}
+
+#h1 img{
+	margin-top: 50px;
+}
+
+.titulo{
+	margin: .5em auto 1.5em;
+	border-bottom: 3px solid lawngreen;
+	text-shadow: 2px 4px 1px lawngreen;
+}
+
+img{
+	width: 250px;
+}
+
+.title-divider{
+	width: 100vw;
+	position: relative;
+	margin-top: 20px;
+	height: 10rem;
+	display: block;
+	text-align: center;
+	font-size: 3em;
+	background-image: url('/img/dd.jpg');
+	background-size: cover;
+	background-position: bottom;
+	z-index: 1;
+}
+
+.title-divider:hover .wrap{
+	backdrop-filter: none;
+}
+
+.wrap{
+	letter-spacing: 5px;
+	font-family: Gamer, sans-serif;
+	color: #fff;
+	padding: 2.5rem;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: rgba(255, 255, 255, .2);
+	backdrop-filter: blur(6px);
+	z-index: 5;
+	transition: .2s all ease-in-out;
+}
+
+
+.informacion{
+	text-align: justify;
+	width: 80vw;
+	height:60vh;
+	margin: 25vh auto 25vh auto;
+	font-size: 1.4rem;
+	background-color: rgba(0, 0, 0, .7);
+	padding:30px;
+	line-height:60px;
+}
+
+.fl{
+	line-height: 5px;
+	margin-left: 60px;
+	font-size: 10rem;
+	font-family: Gamer, sans-serif;
+}
+
+.title-divider-2{
+	width: 100vw;
+	position: relative;
+	margin-top: 40px;
+	height: 10rem;
+	display: block;
+	text-align: center;
+	font-size: 3em;
+	background-image: url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-3138445_08.jpg');
+
+	background-size: cover;
+	background-position:center;
+	z-index: 1;
+}
+
+.title-divider-2:hover .wrap{
+	backdrop-filter: none;
+}
+
+.ceo{
+	margin: 0;
+	padding: 100px;
+	background-color: rgba(125, 252, 0, .7);
+}
+
+#ContenedorImgNombre{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.ceo-info{
+	font-size: 2.5rem ;
+}
+
+#botonProductos{
+	margin-left: 25vw;
+	position: relative;
+	display: inline-block;
+	font-family: Gamer, sans-serif;
+	font-size: 2.5rem;
+	letter-spacing: 4px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(60, 60, 60);
+	transform: skewX(-25deg);
+	padding: 10px;
+	border-right: 10px solid lawngreen;
+	cursor: pointer;
+	transition: .5s all ease;
+}
+
+#botonProductos:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+}
+
+footer{
+	padding: 20px 0;
+	text-align: center;
+	background-color: rgb(60, 60, 60);
+	color: #fff;
 }

@@ -1,12 +1,36 @@
 <style type="text/css">
 	body{
 
-		background-image:url('/img/11.jpg');
+		background-image:url('/img/error.jpg');
 		background-attachment: fixed;
 		background:cover;
+		background-position: center;
+		backdrop-filter: blur(15px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	@font-face {
+		font-family: "rata";
+		src: url("/fuentes/Florensa.ttf");
+	}
+	.h1S{
+		padding: 20px;
+		border: 6px solid;
+		border-radius: 20px;
+		font-weight: 1000;
+		font-family: rata;
+		font-size:2.5rem;
+		animation: color 10s linear infinite;
+		color: green;
+	}
+	@keyframes color{
+		100%{
+		filter: hue-rotate(360deg);
+		}
 	}
 </style>
 <body>
 
-<h1 style='margin-left:25%;line-height:450px'>Lo sentimos Archivo No encontrado</h1>
+<h1 class="h1S">Lo sentimos Archivo No encontrado</h1>
 </body>

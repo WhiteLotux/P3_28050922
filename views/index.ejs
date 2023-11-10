@@ -1,81 +1,49 @@
+
 <!DOCTYPE html>
 <html>
-
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" href="/css/style.css">
-   <title>DEAD-NOTE</title>
-</head>
-
+<%- include('header') -%>
 <body>
+  <header class="header">
+    <div id='h1'>
+      <img src="img/silla1.png" class="imgg">
+      <h1 class='titulo'>Pagina Principal</h1>
+    </div>
+    <div class="header-wrap"></div>
+  </header>
 
-  <nav> 
-    <ul class="menu-horizontal">
-      <!----------------------------------------------------->
-      <li class="li">
-         <a href="#">Inicio</a>
+  <div class="title-divider">
+    <div class="wrap">
+      <h2>Informaciòn</h2>
+    </div>
+  </div>
+  
+  <section class="informacion">
+    <p><span class="fl">U</span>na silla de escritorio es un mueble diseñado específicamente para proporcionar comodidad y soporte ergonómico durante las actividades relacionadas con el trabajo de escritorio. Está compuesta por varios elementos que contribuyen a su funcionalidad y utilidad.
+    En resumen, una silla de escritorio es un mueble esencial en un entorno de trabajo que ofrece comodidad, soporte ergonómico y movilidad, lo que contribuye a una postura adecuada, mejora la productividad y previene problemas de salud relacionados con el trabajo sedentario.</p>
+  </section>
 
-         <ul class="menu-vertical">
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Recomendaciones</a></li>
-            <li><a href="#">Mapa Interactivo</a></li>
-            <li><a href="#">Acerca de Mi</a></li>
-         </ul>
+  <div class="title-divider-2">
+    <div class="wrap">
+      <h2>CEO</h2>
+    </div>
+  </div>
 
-      </li>
-      <!--------------------------------------------------->
-      <li class="li"><!---->
-         <a href="#">Cursos</a>
+  <section class="ceo">
+    <div id='ContenedorImgNombre'>
+      <img src="/img/user.png" class='img'>
+      <div class="ceo-info">
+        <p><b>Nombre:</b> Omar Pimentel</p>
+        <p><b>C.I:</b> 27.211.156</p>
+        <p><b>Sección:</b> 2</p> 
+        <a href='/login' id='botonProductos'>
+          <span>Administrador</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-         <ul class="menu-vertical">
-            <li><a href="#">Html</a></li>
-            <li>
-               <a href="#">Css</a>
-               <ul class="submenu">
-                  <li><a href="#">Transfor</a></li>
-                  <li><a href="#">Traslate</a></li>
-                  <li><a href="#">Rotate</a></li>
-               </ul>
-            </li>
-            <li><a href="#">JavaScript</a></li>
-         </ul>
-
-      </li>
-      <!--------------------------------------------------->
-      <li class="li">
-         <a href="#">Inscripcion</a>
-         <ul class="menu-vertical">
-            <li><a href="#">mensual</a></li>
-            <li><a href="#">anual</a></li>
-         </ul>
-      </li>
-      <!--------------------------------------------------->
-      <li class="li">
-         <a href="#">Contacto</a>
-         <ul class="menu-vertical">
-            <li><a href="#"  id="facebook">Facebook</a></li>
-            <li><a href="#" id="instagram">Instagram</a></li>
-            
-               <li>
-                  <div class="flex">
-                  <a href="#" id="whatsapp">Whatsapp</a>
-                  </div>
-               </li>
-         </ul>
-      </li>
-   <!------------------------------------------------->
-    </ul>
-  </nav>
-
-<section>
-   
-   <h2>Omar Pimentel</h2>
-   <p>Cedula: 28050922</p>
-   <p>sección: 1</p>
- 
-</section>
-
-
+<%- include('footer') -%>    
+</div>
 </body>
+
 </html>

@@ -1,0 +1,113 @@
+@font-face{
+	font-family: 'Florensa';
+	src: url('../fuentes/Florensa.ttf');
+}
+
+@font-face{
+	font-family:'Gamer';
+	src:url('/fuentes/Gamer.ttf');
+}
+
+*, *:before, *:after{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body{
+	background-image:url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-foto-2-1.jpg');
+	background-size:cover;
+	background-attachment:fixed;
+	background-position: center;
+	min-height: 100vh;
+}
+
+h1{
+	font-family: Florensa;
+	letter-spacing: 2px;
+	margin-top:40px;
+}
+
+.table{
+	margin:50px auto;
+	width:80%;
+	background:rgb(0,0,0,.4);
+}
+
+table{
+	border: 2px solid white;
+	color: white;
+	width:100%;
+	border-radius: 10px ;
+	border-bottom: 3px solid lawngreen;
+	border-right: 3px solid lawngreen;
+}
+th{
+	font-weight: bolder;
+	text-transform: uppercase;
+	border-right: 1px solid white;
+	border-bottom: 1px solid lawngreen;
+}
+
+tr td{
+	transition: .3s;
+}
+
+tr:hover td{
+	background: rgba(125, 252, 0, .8);
+}
+
+h1{
+	color:white;
+	text-align:center;
+}
+td{
+	text-align:center;
+}
+
+.botonera{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#botonProductos{
+	border-radius: 10px;
+	text-transform: uppercase;
+	margin-top: 35px;
+	font-weight: bolder;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	letter-spacing: 3px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(60, 60, 60);
+	transform: skewX(-25deg);
+	padding: 10px;
+	border-right: 10px solid lawngreen;
+	cursor: pointer;
+	font-family: Gamer, sans-serif;
+	transition: .5s all ease;
+	border-bottom: 1px solid lawngreen;
+	margin-left: 60px;
+}
+
+#botonProductos:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+	border-bottom: 1px solid red;
+}
+
+#add{
+	height:5vh;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+
+

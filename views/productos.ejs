@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Productos</title>
   <link rel="stylesheet" type="text/css" href="/css/producto.css">
-  
+  <link rel="icon" type="image/x-icon" href="img/silla.png"/>
 </head>
 <body>
   <h1>Productos <%=modelo.length%></h1>
@@ -19,6 +19,7 @@
             <th>Descripcion</th>
             <th>Calidad</th>
             <th>Cantidad</th>
+            <th>Categoria</th>
             <th>
               <a href="/add">
                 <img src="/img/add.png" id='add'>
@@ -34,10 +35,11 @@
               <td><%=producto.descripcion%></td>
               <td><%=producto.calidad%></td>
               <td><%=producto.cantidad%></td>
+              <td><%=producto.categoria_id%></td>
               <td class="icon">
               <a href="/update/<%= producto.producto_id%>"><img src="/img/update.png" width="30"></a>
               <a href="/delete/<%= producto.producto_id%>"><img src="/img/delete.png" width="30" id="delete"></a>
-              <a href="/addImagen">Imagen</a>
+              <a href="/addImagen/<%= producto.producto_id%>"><img src="/img/foto.png" width="30"></a>
              </td>
             </tr>
            <%}%>

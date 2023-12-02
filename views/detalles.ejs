@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Detalles</title>
+	<style type="text/css">
+	  @font-face{
+            font-family:'fontt';
+            src:url('/fuentes/Heavenly_Christmas - Personal Use.otf');
+           }
+           body{
+           background:rgb(7, 7, 7);
+           color:white;
+           }
+		img{
+			width:100%;
+			height:40vh;
+			margin:20px;
+
+		}
+		#contenedor{
+			display:flex;
+			justify-content: center;
+		 width: 80%;
+		 margin:70px auto;
+		}
+		h1{
+			text-align: center;
+			line-height:100px;
+			font:5rem 'fontt';
+		}
+		a{
+			text-decoration:none;
+			color:white;
+			font:2rem 'fontt';
+			margin-left:20px;
+		}
+		
+		 @media screen and (max-width: 720px){
+		 	img{
+			width:70%;
+			height: auto;
+			margin:20px;
+		}
+		 }
+	</style>
+</head>
+<body>
+  <h1>Detalles</h1>
+ <a href="/clientes">Volver</a>
+   <div id='contenedor'>
+  <% for(let m = 0;m < imagenes.length;m++){ %>
+  <div style='display:flex;flex-direction: column;justify-content: center;align-items: center;'>
+
+   <img src="<%= imagenes[m].url%>">
+
+   <div style='display:flex;flex-direction: column;justify-content: center;align-items: center;'>
+   <p><strong>Nombre :</strong><%= imagenes[m].nombre%></p>
+   <p><strong>Codigo :</strong><%= imagenes[m].codigo%></p>
+   <p><strong>Precio :</strong><span style='color:green'><%= imagenes[m].precio%>$</span></p>
+   <p><strong>Descripcion :</strong><%= imagenes[m].descripcion%></p>
+   <p><strong>Calidad :</strong><%= imagenes[m].calidad%></p>
+   <p><strong>Cantidad :</strong><%= imagenes[m].cantidad%></p>
+   <p><strong>Categoria :</strong><%= imagenes[m].categoria_id%></p>
+   </div>
+
+  </div>
+  
+
+  <% } %>
+
+   </div>
+  
+
+</body>
+</html>

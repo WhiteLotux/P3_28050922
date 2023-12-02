@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Sillas</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="img/silla.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/clientes.css">
+</head>
+<body>
+    <div class='clasePadre'>
+
+
+        <!-- Navigation-->
+        <nav class="navv" style='background:rgba(0,0,0,.8);border:1px solid black'>
+            <div class="nocontainer">
+
+
+
+                <div class="row-----">
+
+                 <a href="/" id='volverr'>Volver</a>
+                 <input class="form-control" id="buscarPrincipal" type="search" placeholder="Buscar" aria-label="Buscar Producto..."/>
+
+
+
+                 <button onclick="buscarProductos()" id='boton3'>Buscar</button>
+                 
+
+             </div>
+
+         </div>
+
+     </nav>
+     <!-- Masthead-->
+     <header>
+
+         <h1>Sillas de escritorio</h1>
+
+     </header>
+
+
+     <section style='width:100%;'>
+        <div class="container">
+
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+
+
+    <section class="section">
+        <h2>PRODUCTOS</h2>
+        <div class="my-5">
+            <div class="row justify-content-center">
+
+               <button id='botonCuadricula' style='width:5vw;background:transparent;margin-left:5%;border:none;margin-bottom:20px;background:white;border-radius:20px;' onClick="cuadricula()"><img src="/img/menu.png" class='botonC'></button>
+
+               <div class='product' id='listaDeProductos'>
+
+                <%for(let x = 0;x < producto.length;x++){%>
+
+                <div class='productooo'>
+
+                    <div style='display:flex;flex-direction: column;justify-content:center;align-items: center;'>
+                        <img src="<%= producto[x].imagen_url%>" class='imagen' id='imagenSelector'>
+
+
+                        <div id='NPB'>
+
+                           <div style='display:flex;flex-direction: column;justify-content:center;align-items:center'>
+                            <strong><p>Nombre:</strong><%= producto[x].nombre %></p>
+                            <strong><p>Precio: </strong><span style='color:green'><%= producto[x].precio %> $</span></p>
+
+                        </div>
+
+                        <div id='comprarDetalles'>
+
+                           <img src="/img/carrito.png" class='imgCarrito'>
+                           <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a> 
+
+                       </div>
+
+
+
+
+                   </div>
+
+
+
+               </div>
+
+
+
+           </div>
+           <% } %>
+           <!-------------------->
+           <table class='table'>
+
+            <thead>
+                <tr style='border:1px solid black'>
+
+                    <th class='column'>Imagen</th>
+                    <th class='column'>Nombre</th>
+                    <th class='column'>Codigo</th>
+                    <th class='column'>Precio</th>
+                    <th class='column'>Descripcion</th>
+                    <th class='column'>Calidad</th>
+                    <th class='column'>Cantidad</th>
+                    <th class='column'>Categoria</th>
+                    <th class='column'>Opciones</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <%for(let u = 0;u < producto.length;u++){%>
+                <tr class='tr' style='border:1px solid black'><!--ul-->
+                    <!--li-->
+                    <td class='column'><img src="<%= producto[u].imagen_url %>" style='width:100%;height:17vh'></td>
+                    <td class='column'><%= producto[u].nombre %></td>
+                    <td class='column'><%= producto[u].codigo %></td>
+                    <td class='column'><%= producto[u].precio %></td>
+                    <td class='column'><%= producto[u].descripcion %></td>
+                    <td class='column'><%= producto[u].calidad %></td>
+                    <td class='column'><%= producto[u].cantidad %></td>
+                    <td class='column'><%= producto[u].categoria_id %></td>
+                    <td>
+                        <img src="/img/carrito.png" style='width:60%;'>
+                        <a href="/detalles/<%=producto[u].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a>
+                    </td>
+                </tr> 
+                <% } %>
+            </tbody>
+        </table>
+        <%for(let l = 0 ; l < producto.length; l++){%>
+        <ul class='ULtabla3'>
+            <li class='LItabla3'><img src="<%= producto[l].imagen_url %>" style='width:40%;'></li>
+            <li class='LItabla3'><span>Nombre: </span><span><%= producto[l].nombre %></span></li>
+            <li class='LItabla3'><span>Codigo: </span><span><%= producto[l].codigo %></span> </li>
+            <li class='LItabla3'><span>Precio: </span><span style='color:green'><%= producto[l].precio %> $</span> </li>
+            <li class='LItabla3'><span>Descripcion: </span><span><%= producto[l].descripcion %></span></li>
+            <li class='LItabla3'><span>Calidad: </span><span><%= producto[l].calidad %></span></li>
+            <li class='LItabla3'><span>Cantidad: </span><span><%= producto[l].cantidad %></span></li>
+            <li class='LItabla3'><span>Categoria: </span><span><%= producto[l]. categoria_id %></span></li>
+            <li class='LItabla3'>
+
+                <div style='display:flex;justify-content:center;align-items:center;width:20%;'>
+                    <img src="/img/carrito.png" style='width:100%;'>
+                </div>
+
+                <div style='display:flex;justify-content:center;align-items:center;width:20%;'>
+                   <a href="/detalles/<%=producto[l].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" style='width:100%;'></a>
+               </div>
+
+           </li>
+       </ul>
+       <% } %>
+   </div>
+
+</div>
+</div>
+</section>
+
+
+
+</section>
+
+<!-- Core theme JS-->
+<script src="/js/script.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * -->
+</div>
+</body>
+</html>

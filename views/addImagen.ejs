@@ -10,13 +10,20 @@
  <h1 class="login">Agregar Imagen</h1>
 <div id="login">
 
-    <form class="login_form" action="/addImagen" method="post" enctype="multipart/form-data">
+    <form class="login_form" action="/addImagen/<%=modelo.producto_id%>" method="post" enctype="multipart/form-data">
 
             <label for='imagen'>Imagen</label>
             <input type="file" name="img" id="img" placeholder="Imagen">
     
-            <label>Destacado</label>
-            <input type="text" name="destacado" placeholder="Destacado" id='destacado'>
+          
+
+        <label for="destacado">Destacado</label>
+       <select id='destacado' name="destacado">
+        <option value='1'>principal</option>
+        <option value='0'>no main</option>
+       </select>
+
+  
 
             <input type="submit" value="agg Imagen" id="sendImg">
     </form>

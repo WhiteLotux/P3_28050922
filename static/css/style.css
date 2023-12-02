@@ -194,6 +194,27 @@ img{
 	cursor: pointer;
 	transition: .5s all ease;
 }
+.botonProductos{
+margin-left: 25vw;
+	position: relative;
+	display: inline-block;
+	font-family: Gamer, sans-serif;
+	font-size: 2.5rem;
+	letter-spacing: 4px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(60, 60, 60);
+	transform: skewX(-25deg);
+	padding: 10px;
+	border-right: 10px solid lawngreen;
+	cursor: pointer;
+	transition: .5s all ease;	
+}
+.botonProductos:hover{
+	background-color: rgb(40, 40, 40);
+	border-right: 10px solid red;
+}
 
 #botonProductos:hover{
 	background-color: rgb(40, 40, 40);

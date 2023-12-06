@@ -142,15 +142,15 @@ function deletee(req,res){
 function aggIMG(req,res){
   const id = req.params.id;
   console.log(req.file);
-  let ruta = req.file.path.split('\\');
   console.log(ruta,'funcion aggIMG');
-  const file = `/${ruta[1]}/${ruta[2]}`;
+  const file = `/uploads/${req.file.filename}`;
+  const rutaAbsoluta = `${req.protocol}://${req.get('host')}${file}`;
   console.log(file);
   const {destacado} = req.body;
   const sql = `INSERT INTO imagenes(url,destacado,productoID) 
   VALUES (?,?,?)`;
 
-  db.run(sql, [file,destacado,id], err => {
+  db.run(sql, [rutaAbsoluta,destacado,id], err => {
     if (err) return console.error(err.message);
     console.log('URL de imagen Insertada Correctamente');
     res.redirect('/productos');

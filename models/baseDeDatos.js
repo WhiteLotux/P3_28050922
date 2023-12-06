@@ -142,7 +142,6 @@ function deletee(req,res){
 function aggIMG(req,res){
   const id = req.params.id;
   console.log(req.file);
-  console.log(ruta,'funcion aggIMG');
   const file = `/uploads/${req.file.filename}`;
   const rutaAbsoluta = `${req.protocol}://${req.get('host')}${file}`;
   console.log(file);

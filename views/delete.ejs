@@ -15,12 +15,20 @@
     <%- include('editorcentral') -%>
 
     <div id="cancelar">
+
       <input class="actua" type="submit" value="Eliminar" id="eliminarRegistro">
-      <a class="actua2" href="/productos" id="botonProductos">Cancelar</a>
+
+      <input type="button" class='actua' value='Cancelar' onclick='volver()'>
+
     </div>
     
   </div>
 </form>
+<script type="text/javascript"> 
+ const volver = ()=>{
+  window.location.href='/productos';
+ }
+</script>
 </body>
 <%- include('footer') -%>
 </html>

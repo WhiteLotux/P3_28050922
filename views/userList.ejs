@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Users</title>
+  <link rel="icon" type="image/x-icon" href="img/silla.png"/>
+  <link rel="stylesheet" type="text/css" href="/css/producto.css">  
+</head>
+<body>
+
+  <h1>Usuarios</h1>
+  <div class="table">
+    
+    <table>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cedula</th>
+            <th>Correo</th>
+            <th>Password</th>
+            <th><a href="/addUser"><img src="/img/add.png" id='add'></a></th>
+          </tr>
+          <%for(const usuario of modelo){%>
+            <tr>
+              <td><%=usuario.id%></td>
+              <td><%=usuario.nombre%></td>
+              <td><%=usuario.apellido%></td>
+              <td><%=usuario.cedula%></td>
+              <td><%=usuario.correo%></td>
+              <td><%=usuario.password%></td>
+              <td class="icon">
+              <a href="/updateUser/<%= usuario.id%>"><img src="/img/update.png" width="30"></a>
+              <a href="/deleteUser/<%= usuario.id%>"><img src="/img/delete.png" width="30" id="delete"></a>
+             </td>
+            </tr>
+           <%}%>
+        </table>
+       
+  </div>
+
+
+     <div id='botones'>
+    <a class='botonProductos' href="/logout2">Regresar</a>
+    <a href='/categorias' class='botonProductos'>Categorias</a>
+    <a href="/usuarios">Usuarios</a> 
+    <a href="/compras">Compras</a>
+    <a href="/productos">Productos</a>
+  </div>
+
+</body>
+</html>

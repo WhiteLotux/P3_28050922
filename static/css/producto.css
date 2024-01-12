@@ -7,7 +7,6 @@
 	font-family:'Gamer';
 	src:url('/fuentes/Gamer.ttf');
 }
-
 *, *:before, *:after{
 	margin:0;
 	padding:0;
@@ -15,15 +14,11 @@
 }
 
 body{
-	background-image:url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-foto-2-1.jpg');
-	background-size:cover;
-	background-attachment:fixed;
-	background-position: center;
-	min-height: 100vh;
+background:-webkit-radial-gradient(center,circle,rgb(240, 240, 240),rgb(208, 232, 250));
 }
 
 h1{
-	font-family: Florensa;
+	font:2.5rem 'Florensa';
 	letter-spacing: 2px;
 	margin-top:40px;
 }
@@ -31,22 +26,19 @@ h1{
 .table{
 	margin:50px auto;
 	width:80%;
-	background:rgb(0,0,0,.4);
+	background:rgb(0,0,0,.7);
 }
 
 table{
 	border: 2px solid white;
 	color: white;
 	width:100%;
-	border-radius: 10px ;
-	border-bottom: 3px solid lawngreen;
-	border-right: 3px solid lawngreen;
+
 }
 th{
 	font-weight: bolder;
 	text-transform: uppercase;
-	border-right: 1px solid white;
-	border-bottom: 1px solid lawngreen;
+
 }
 
 tr td{
@@ -54,11 +46,11 @@ tr td{
 }
 
 tr:hover td{
-	background: rgba(125, 252, 0, .8);
+	background: rgba(240, 242, 245,.7);
 }
 
 h1{
-	color:white;
+	color:black;
 	text-align:center;
 }
 td{
@@ -107,6 +99,28 @@ td{
 a {
 	text-decoration: none;
 	color: white;
+}
+#botones{
+	margin-top: 50px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	 border-top:none;
+	 border-left:none;
+	 border-right:none;
+
+}
+#botones a{
+	border-radius:15px 10px 20px 10px;
+    font:1.3rem 'Florensa';
+	padding:20px;
+	text-decoration: none;
+	transition: all 1s;
+	color:rgb(0,0,0);
+	font-weight: bolder;
+}
+#botones a:hover{
+transform:translateY(-10px);
 }
 
 

@@ -1,0 +1,97 @@
+  @font-face{
+    font-family:'dali';
+    src:url('/fuentes/Zombie Predator TTF Personal.ttf');
+  }
+@font-face{
+  font-family: 'Florensa';
+  src: url('../fuentes/Florensa.ttf');
+}
+
+  .tablee {
+    overflow: auto;
+    background: rgba(0, 0, 0,.6);
+    width: 90%;
+    height: 60vh;
+    margin: 50px auto;
+    color:white;
+  }
+
+
+body{
+background:-webkit-radial-gradient(center,circle,rgb(240, 240, 240),rgb(208, 232, 250));
+}
+
+  .botonProductos {
+    color:white;
+    text-decoration: none;
+    padding: 8px;
+    margin: 10px;
+    transition: all 1s;
+  }
+  
+  
+  #botonera {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size:1.2rem;
+    font-weight: bold;
+    color: black;
+    background: rgba(180, 180, 180, .7);
+    border: 1px solid black;
+  }
+
+  table {
+    border: 1px solid black;
+    width: 100%;
+    color:white;
+    height: auto;
+    table-layout: auto;
+  }
+
+  table td {
+    text-align: center;
+  }
+
+  td, th {
+    width: auto;
+  }
+  h1 {
+  
+    width:100%;
+    text-align: center;
+    margin-top:1rem;
+    font: 3rem 'Florensa';
+    border-radius:15px;
+  }
+  .header{
+    background-color: rgb(28, 44, 73);
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 5px;
+  }
+  #add{
+    width:2.5rem;
+  }
+  #botones{
+  margin-top: 50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+   border-top:none;
+   border-left:none;
+   border-right:none;
+
+}
+#botones a{
+  border-radius:15px 10px 20px 10px;
+    font:1.3rem 'Florensa';
+  padding:20px;
+  text-decoration: none;
+  transition: all 1s;
+  color:rgb(0,0,0);
+  font-weight: bolder;
+}
+#botones a:hover{
+transform:translateY(-10px);
+}

@@ -44,16 +44,29 @@
 <label for="cantidad">Cantidad</label>
 <input class="input" type="number" name="cantidad" value="<%= modelo.cantidad %>">
 <!----------------------------------------------------->
+
+<label for='categoria'>Categoria</label>
+                        <select id='categoria' name='categoria' required>
+            <option value="1">Categoria 1</option>
+            <option value="2">Categoria 2</option>
+            <option value="3">Categoria 3</option>
+            <option value="4">Categoria 4</option>
+            </select>
 </div>
  
 <!------------------------------------------->
 <div id="cancelar">
 	<input class="actua" type="submit" value="Actualizar" id="update">
-    <a class="actua2" href="/productos" id="botonProductos">Productos</a>
+    <input type="button" value="Cancelar" onclick='volver()' class="actua">
 </div>
 
 </div>
 </form>
+<script type="text/javascript">
+    function volver(){
+    window.location.href='/productos';
+    }
+</script>
 </body>
 <%- include('footer') -%>
 </html>

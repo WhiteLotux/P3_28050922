@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Users</title>
+	<style type="text/css">
+l@font-face{
+	font-family:'Florensa';
+	src: url('./fuentes/Florensa.ttf');
+}
+
+@font-face{
+	font-family:'Gamer';
+	src:url('/fuentes/Gamer.ttf');
+}
+
+		body{
+	background-image:url('https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/10/900-Escritorio-Europa-2311461-1837273_02.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+		form{
+			display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            border:1px solid black;
+            border-radius:10px;
+            margin:2% auto;
+            width:45%;
+            height:auto;
+            padding: 10px;
+         	background: rgba(0, 0, 0, .4);
+	        backdrop-filter: blur(6px);
+		}
+		.divInfo{
+			display: flex;
+			flex-direction:column;
+			justify-content: center;
+			align-items: center;
+		}
+		input{
+			padding:5px;
+			border-radius:10px;
+			text-align: center;
+		}
+		label{
+			margin-bottom:20px;
+			margin-top:20px;
+			color:white;
+			font-weight: bold;
+			font-size:1.5rem;
+		}
+		h1{
+			font:3.2rem 'Florensa';
+			text-align:center;
+			color:black;
+		}
+		#divTitulo{
+			width:40%;
+			margin:50px auto;
+		}
+		#enviar{
+			cursor: pointer;
+			margin-top:10px;
+		}
+		p{
+		 margin-right: 1rem;
+		}
+		a{
+			color:rgb(82, 175, 162);
+			text-decoration: none;
+			font-size:1rem;
+		}
+		a:hover{
+			text-decoration: revert-layer;
+		}
+        @media screen and (max-width:720px){
+         form{
+		width:80%;
+		}
+        }
+	</style>
+	<link rel="stylesheet" type="text/css" href="/css/queryLogin.css">
+	<link rel="icon" type="image/x-icon" href="img/mascotas.png" />
+	<script type="text/javascript" src="/js/alert.js"></script>
+</head>
+<body>
+	<div id='divTitulo'>
+		<h1>Inicio de Sesion</h1>
+	</div>
+
+
+<form action="/loginUsers" method="post">
+
+<div class='divInfo'>
+ <label>Correo Electronico</label>
+ <input type="email" name="email" required>
+</div>
+
+<div class='divInfo'>
+ <label>Contraseña</label>
+ <input type="password" name="password" required>	
+</div>
+
+<div class='divInfo'>
+	<input type="submit" value="Iniciar" id='enviar'>
+</div>
+
+<div style='display:flex;justify-content: center;align-items: center;color:white'>
+ <p>¿No tienes una cuenta? registrate aqui </p>
+ <a href="/registroUsers">Registro</a>
+
+</div>
+
+</form>
+<script type="text/javascript">
+	fetch('/mensageDeRegistro')
+	.then(res=> res.json())
+	.then(respuesta=>{
+		if(respuesta.mensaje == false){
+			console.log('No se recibio nada de la ruta "mensajeDeRegistro" ');
+		}else{
+			  console.log('--_--_--'+respuesta.mensaje+'--_--_--');
+			  Swal.fire('¡Se ha Registrado Exitosamente!')
+			  .then(()=>{
+			  	 fetch('/eliminarMensajeRegistro')
+			  	 .then(res=>res.json())
+			  	 .then(respuesta2=>{
+			  	 	if(respuesta2.mensaje === false){
+			  	 		console.log('mensaje inexistente');
+			  	 	}			  
+			  	 })
+			  })
+		}
+	})
+</script>
+</body>
+</html>

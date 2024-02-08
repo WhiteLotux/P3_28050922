@@ -8,7 +8,7 @@
     <meta name="keywords" content="html5,javascript,diseño web"/>
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/update.css">
-   <title>Update</title>
+   <title>Agregar</title>
 </head>
  <h1 id="crear">Agregar Producto</h1>
 
@@ -43,18 +43,31 @@
 <label for="cantidad">Cantidad</label>
 <input class="input" type="number" name="cantidad" placeholder=" Cantidad">
 <!--------------------------------------------------->
-
+<label for='categoria'>Categoria</label>
+                        <select id='categoria' name='categoria' required>
+            <option value="1">Categoria 1</option>
+            <option value="2">Categoria 2</option>
+            <option value="3">Categoria 3</option>
+            <option value="4">Categoria 4</option>
+            </select>
 <!----------------------------------------------------->
 </div>
 
 <!------------------------------------------->
 <div id="cancelar">
 	<input class="actua" type="submit" value="Agregar" id="update">
-    <a class="actua2" href="/productos" id="botonProductos">Volver</a>
+    <input type="button" value="Cancelar" onclick="cancelar()"
+    class="actua">
 </div>
 
 </div>
 </form>
+<script type="text/javascript">
+    
+    const cancelar=()=>{
+     window.location.href='/productos';
+    }
+</script>
 </body>
 <%- include('footer') -%>
 </html>

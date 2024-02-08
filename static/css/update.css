@@ -109,7 +109,7 @@ label{
 
 .actua{
 	text-transform: uppercase;
-	margin-top: 20px;
+	margin:3rem 1rem 3rem 1rem;
 	font-weight: black;
 	position: relative;
 	display: inline-block;
@@ -125,6 +125,9 @@ label{
 	cursor: pointer;
 	font-family: Gamer, sans-serif;
 	transition: .5s all ease;
+	width:50%;
+	height:7vh;
+	line-height: 2px;
 }
 
 .actua:hover{

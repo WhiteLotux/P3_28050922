@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Compras</title>
+  <link rel="icon" type="image/x-icon" href="img/silla.png"/>
+  <link rel="stylesheet" type="text/css" href="/css/comprasMediaScreen.css">
+  <link rel="stylesheet" type="text/css" href="/css/botonera.css">
+</head>
+<body>
+
+ 
+
+  <h1>Compras</h1>
+  <div class="tablee">
+    <table border>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Usuario</th>
+        <th>Apellido</th>
+        <th>Cedula</th>
+        <th>Marca Dispositivo</th>
+        <th>Cliente_id</th>
+        <th>Producto_id</th>
+        <th>Cantidad</th>
+        <th>Total_pagado</th>
+        <th>fecha</th>
+        <th>ip_cliente</th>
+        <th>codigo</th>
+        <th>Nºtarjeta</th>
+        <th>Cvv</th>
+        <th>MesV</th>
+        <th>year</th>
+        <th>currency</th>
+        <th>Descripcion</th>
+        <th>Opcion</th>
+      </tr>
+      <%for(const compra of modelo){%>
+      <tr>
+        <td><%=compra.compras_id%></td>
+        <td><%=compra.nombre_de_usuario%></td>
+        <td><%=compra.apellido%></td>
+        <td><%=compra.cedula%></td>
+        <td><%=compra.marca_dispositivo%></td>
+        <td><%=compra.cliente_id%></td>
+        <td><%=compra.producto_id%></td>
+        <td><%=compra.cantidad%></td>
+        <td><%=compra.total_pagado%></td>
+        <td><%=compra.fecha%></td>
+        <td><%=compra.ip_cliente%></td>
+        <td><%=compra.codigo%></td>
+        <td><%=compra.numeroT%></td>
+        <td><%=compra.cvv%></td>
+        <td><%=compra.mesV%></td>
+        <td><%=compra.year%></td>
+        <td><%=compra.currency%></td>
+        <td><%=compra.descripcion%></td>
+        <td class="icon">
+          <a href="/deleteCompra/<%= compra.compras_id%>"><img src="/img/delete.png" width="30" id="delete"></a>
+        </td>
+      </tr>
+      <%}%>
+    </table>
+    
+  </div>
+
+   <div id='botones'>
+    <a class='botonProductos' href="/logout2">Regresar</a>
+    <a href='/categorias' class='botonProductos'>Categorias</a>
+    <a href="/usuarios">Usuarios</a> 
+    <a href="/compras">Compras</a>
+    <a href="/productos">Productos</a>
+  </div>
+
+</body>
+</html>

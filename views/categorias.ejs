@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>categoriass</title>
   <link rel="stylesheet" type="text/css" href="/css/producto.css">
+  <link rel="icon" type="image/x-icon" href="img/silla.png"/>
   
 </head>
 <body>
@@ -23,15 +24,19 @@
               <td class="icon">
 
               <a href="/updateCategoria/<%=categorias.id%>"><img src="/img/update.png" width="30"></a>
-
+              <a href="/eliminarCategoria/<%=categorias.id%>"><img src="/img/delete.png" width="30"></a>
              </td>
             </tr>
            <%}%>
         </table>
        
   </div>
-  <div class="botonera">
-    <a id='botonProductos' href="/productos">Volver</a>
+  <div id='botones'>
+    <a class='botonProductos' href="/logout2">Regresar</a>
+    <a href='/categorias' class='botonProductos'>Categorias</a>
+    <a href="/usuarios">Usuarios</a> 
+    <a href="/compras">Compras</a>
+    <a href="/productos">Productos</a>
   </div>
 </body>
 </html>

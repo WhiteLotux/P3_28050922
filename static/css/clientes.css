@@ -352,7 +352,7 @@
             cursor:pointer;
          }
          #h33{
-             margin-left:12%;
+            margin-left:12%;
             font:3rem "digital";
             color:rgb(208, 232, 250);
             transition: all 1s; 
@@ -368,6 +368,12 @@
             margin-left:30px;
             font:1.5rem 'digital';
             margin-right: 20px;
+        }
+        .productooo{
+            background:rgba(44, 127, 187,.5);
+            height: auto;
+            border-radius: 20px;
+            font-size:1.3rem;
         }
 /*-----------------------------------------------------------*/
 

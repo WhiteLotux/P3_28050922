@@ -71,9 +71,15 @@ let upload = multer({ storage: storage });
 app.get('/',(req,res)=>{
   res.render('index.ejs')
 });
-
+    
 app.get('/login',(req,res)=>{
-res.render('login.ejs');
+res.render('login.ejs',{
+   og: {
+      title: 'Sillas',
+      description: 'Venta de Sillas de escritorio',
+      image: 'https://images.pexels.com/photos/3873176/pexels-photo-3873176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }
+});
 });
 
 
@@ -249,7 +255,7 @@ app.get('/comprar/:id',verifyToken,(req,res)=>{
   baseDatosModels.comprar(req,res);
 });
 //------------------------------------------------------
-app.post('/comprarPost',async (req,res)=>{
+app.post('/comprarPost',verifyToken,async (req,res)=>{
 baseDatosModels.comprarPOST(req,res);
 })
 //------------------------------------------------------
@@ -303,6 +309,54 @@ baseDatosModels.deleteUser(req,res);
 app.get('/deleteCompra/:id',(req,res)=>{
 baseDatosModels.deleteCompra(req,res);
 })
+//------------------------------------------------------
+app.post('/puntuaciones',verifyToken,(req,res)=>{
+baseDatosModels.puntuaciones(req,res);
+});
+//------------------------------------------------------
+
+//------------------------------------------------------
+
+app.get('/recuperarPassword',(req,res)=>{
+res.render('recuperarPassword.ejs',{
+    og: {
+      title: 'Sillas',
+      description: 'Venta de Sillas de escritorio',
+      image: 'https://images.pexels.com/photos/3873176/pexels-photo-3873176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }
+});
+});
+
+//------------------------------------------------------
+app.post('/recuperarPassword',(req,res)=>{
+baseDatosModels.enviarEmailRecuperacion(req,res);
+});
+//------------------------------------------------------
+app.get('/restablecer-contrasena',(req,res)=>{  
+
+const token = req.query.token;
+const UserName = req.query.userName;
+console.log(userName);
+
+const tokenCookies = req.cookies.securityToken;
+
+console.log(tokenCookies,'tokenCookies');
+console.log(token,'token');
+
+
+res.render('restablecer.ejs',{user:UserName,og: {
+      title: 'Sillas',
+      description: 'Venta de Sillas de escritorio',
+      image: 'https://images.pexels.com/photos/3873176/pexels-photo-3873176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }});
+
+});
+//------------------------------------------------------
+app.post('/restablecer-contrasena',(req,res)=>{
+
+baseDatosModels.restablecerPost(req,res);
+
+});
 //------------------------------------------------------
 //logout cliente
 app.get('/logout',(req, res) => {

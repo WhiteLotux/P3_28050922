@@ -15,7 +15,7 @@ for (let x = 0; x < estrella.length; x++) {
       // Si la estrella ya está seleccionada, se desmarcan todas las estrellas
       for(let i = 0; i < estrella.length ; i++){
 
-        estrella[i].src = '/icon/estrella.png';
+        estrella[i].src = '/img/estrella.png';
 
       }
      
@@ -27,7 +27,7 @@ for (let x = 0; x < estrella.length; x++) {
       for(let i = 0; i <= x; i++) {
         console.log(x,'longitud de X');
         localStorage.setItem('longitud',x);
-        estrella[i].src = '/icon/estrellaYellow.png';
+        estrella[i].src = '/img/estrellaYellow.png';
         sumaEstrellas = parseInt(estrella[i].dataset.valor);
         console.log('valor de la suma de las estrellas',sumaEstrellas);
       }
@@ -86,7 +86,7 @@ for (let x = 0; x < estrella.length; x++) {
          // Muestra la imagen en un diálogo modal
          Swal.fire({
          title: '¡Gracias por su puntuacion!',
-         html: '<img src="/icon/estrellaYellow.png" width="30" alt="Mi imagen">',
+         html: '<img src="/img/estrellaYellow.png" width="30" alt="Mi imagen">',
          showCloseButton: true,
          showConfirmButton: false
          });
@@ -111,7 +111,7 @@ for (let x = 0; x < estrella.length; x++) {
       }else{
            estrellaModificable=true;
            alert('Debe seleccionar una estrella');
-           estrella[4].src='/icon/estrella.png'
+           estrella[4].src='/img/estrella.png'
       }
 
 
@@ -127,7 +127,7 @@ for (let x = 0; x < estrella.length; x++) {
       if (longitud !== null){
         longitud = parseInt(longitud);
         for (let i = 0; i <= longitud; i++) {
-          estrella[i].src = '/icon/estrellaYellow.png';
+          estrella[i].src = '/img/estrellaYellow.png';
         }
       //estrellaModificable=false;
       }

@@ -3,7 +3,54 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login</title>
+	<title><%= og.title %></title>
+  <meta name="description" content="<%= og.description %>">
+  <meta property="og:title" content="<%= og.title %>">
+  <meta property="og:description" content="<%= og.description %>">
+  <meta property="og:image" content="<%= og.image %>">
+ <!-- Favicon-->
+ <link rel="icon" type="image/x-icon" href="/icon/ico.png" />
+ <!-- Core theme CSS (includes Bootstrap)-->
+ <link href="/css/cliente.css" rel="stylesheet" />
+ <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>-->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDYBWY97KW"></script>
+<!--Google Analytics-->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-WDYBWY97KW');
+</script>
+<!--Schema Markup-->
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "sillas",
+    "datePublished": "2024-02-01",
+    "author": {
+      "@type":"Person",
+      "name": "Omar Pimentel"
+    },
+    "publisher":{
+      "@type": "Organization",
+      "name": "Decoration Company",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.pexels.com/photos/3873168/pexels-photo-3873168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.pexels.com/photos/3873168/pexels-photo-3873168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "width": "800",
+      "height": "600"
+    },
+    "description": "Sillas de escritorio"
+  }
+  </script>
 	<link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 <body>

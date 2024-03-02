@@ -5,11 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Sillas</title>
+    <title><%= og.title %></title>
+  <meta name="description" content="<%= og.description %>">
+  <meta property="og:title" content="<%= og.title %>">
+  <meta property="og:description" content="<%= og.description %>">
+  <meta property="og:image" content="<%= og.image %>">
+ <!-- Favicon-->
+ <link rel="icon" type="image/x-icon" href="/icon/ico.png" />
+ <!-- Core theme CSS (includes Bootstrap)-->
+ <link href="/css/cliente.css" rel="stylesheet" />
+ <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>-->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDYBWY97KW"></script>
+<!--Google Analytics-->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-WDYBWY97KW');
+</script>
+<!--Schema Markup-->
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "sillas",
+    "datePublished": "2024-02-01",
+    "author": {
+      "@type":"Person",
+      "name": "Omar Pimentel"
+    },
+    "publisher":{
+      "@type": "Organization",
+      "name": "Decoration Company",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.pexels.com/photos/3873168/pexels-photo-3873168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.pexels.com/photos/3873168/pexels-photo-3873168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "width": "800",
+      "height": "600"
+    },
+    "description": "Sillas de escritorio"
+  }
+  </script>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="img/silla.png"/>
     <link rel="stylesheet" type="text/css" href="/css/clientes.css">
-     <script type="text/javascript" src="/js/alert.js"></script>
+    <script type="text/javascript" src="/js/alert.js"></script>
 </head>
 <body>
     <div class='clasePadre'>
@@ -23,28 +70,28 @@
 
                 <div class="row-----">
 
-                 <a href="/logout" id='volverr'>Volver</a>
-                 <input class="form-control" id="buscarPrincipal" type="search" placeholder="Buscar" aria-label="Buscar Producto..."/>
+                   <a href="/logout" id='volverr'>Volver</a>
+                   <input class="form-control" id="buscarPrincipal" type="search" placeholder="Buscar" aria-label="Buscar Producto..."/>
 
 
 
-                 <button onclick="buscarProductos()" id='boton3'>Buscar</button>
-                 
-
-             </div>
-
-         </div>
-
-     </nav>
-     <!-- Masthead-->
-     <header>
-
-         <h1>Sillas de escritorio</h1>
-
-     </header>
+                   <button onclick="buscarProductos()" id='boton3'>Buscar</button>
 
 
-     <section style='width:100%;'>
+               </div>
+
+           </div>
+
+       </nav>
+       <!-- Masthead-->
+       <header>
+
+           <h1>Sillas de escritorio</h1>
+
+       </header>
+
+
+       <section style='width:100%;'>
         <div class="container">
 
         </div>
@@ -57,9 +104,9 @@
         <div class="my-5">
             <div class="row justify-content-center">
 
-               <button id='botonCuadricula' style='width:5vw;background:transparent;margin-left:5%;border:none;margin-bottom:20px;background:white;border-radius:20px;' onClick="cuadricula()"><img src="/img/menu.png" class='botonC'></button>
+             <button id='botonCuadricula' style='width:5vw;background:transparent;margin-left:5%;border:none;margin-bottom:20px;background:white;border-radius:20px;' onClick="cuadricula()"><img src="/img/menu.png" class='botonC'></button>
 
-               <div class='product' id='listaDeProductos'>
+             <div class='product' id='listaDeProductos'>
 
                 <%for(let x = 0;x < producto.length;x++){%>
 
@@ -71,99 +118,128 @@
 
                         <div id='NPB'>
 
-                           <div style='display:flex;flex-direction: column;justify-content:center;align-items:center'>
-                            <strong><p>Nombre:</strong><%= producto[x].nombre %></p>
+                         <div style='display:flex;flex-direction: column;justify-content:center;align-items:center'>
+                            <p><strong>Nombre:</strong> <span style='color:gold'><%= producto[x].nombre %></span></p>
                             <strong><p>Precio: </strong><span style='color:green'><%= producto[x].precio %> $</span></p>
 
                         </div>
 
-                        <div id='comprarDetalles'>
-
-                             <a href="/comprar/<%=producto[x].producto_id%>"><img src="/img/carrito.png" class='imgCarrito' width="30"></a>
-
-                           <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a> 
-
-                       </div>
+                        <div class='comprarDetalles'>
 
 
+                          <div class='contenedorPuntuacion'>
+
+                             <p class="puntuacion" data-producto_id='<%=producto[x].producto_id%>' data-puntuacion='<%=producto[x].puntuacion%>'><% if(producto[x].puntuacion !== null){ %>
+                                Puntuación: <%=producto[x].puntuacion%>
+                                <% }else{%>
+                                Sin Puntos
+                                <% } %> 
+                            </p>
 
 
-                   </div>
+                        </div>
+
+                        <div class='estrellas'>
+                           <img src="/img/estrella.png" width="25" class="estrella" data-valor='1' title="1">
+
+                           <img src="/img/estrella.png" width="25" class="estrella" data-valor='2' title="2">
+
+                           <img src="/img/estrella.png" width="25" class="estrella" data-valor='3' title="3">
+
+                           <img src="/img/estrella.png" width="25" class="estrella" data-valor='4' title="4">
+
+                           <img src="/img/estrella.png" width="25" class="estrella" data-valor='5' data-producto_id='<%=producto[x].producto_id%>' title="5"> 
+                       </div> 
+
+
+                       <div style='display:flex;justify-content: center;align-items: center;'>
+
+                          <a href="/comprar/<%=producto[x].producto_id%>"><img src="/img/carrito.png" width="30"></a>
+
+                          <a href="/detalles/<%=producto[x].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a> 
+
+                      </div>
+                  </div>
 
 
 
-               </div>
+
+              </div>
 
 
 
-           </div>
-           <% } %>
-           <!-------------------->
-           <table class='table'>
+          </div>
 
-            <thead>
-                <tr style='border:1px solid black'>
 
-                    <th class='column'>Imagen</th>
-                    <th class='column'>Nombre</th>
-                    <th class='column'>Codigo</th>
-                    <th class='column'>Precio</th>
-                    <th class='column'>Descripcion</th>
-                    <th class='column'>Calidad</th>
-                    <th class='column'>Cantidad</th>
-                    <th class='column'>Categoria</th>
-                    <th class='column'>Opciones</th>
 
-                </tr>
-            </thead>
+      </div>
+      <% } %>
+      <!-------------------->
+      <table class='table'>
 
-            <tbody>
-                <%for(let u = 0;u < producto.length;u++){%>
-                <tr class='tr' style='border:1px solid black'><!--ul-->
-                    <!--li-->
-                    <td class='column'><img src="<%= producto[u].imagen_url %>" style='width:100%;height:17vh'></td>
-                    <td class='column'><%= producto[u].nombre %></td>
-                    <td class='column'><%= producto[u].codigo %></td>
-                    <td class='column'><%= producto[u].precio %></td>
-                    <td class='column'><%= producto[u].descripcion %></td>
-                    <td class='column'><%= producto[u].calidad %></td>
-                    <td class='column'><%= producto[u].cantidad %></td>
-                    <td class='column'><%= producto[u].categoria_id %></td>
-                    <td>
-                        <a href="/comprar/<%=producto[u].producto_id%>"><img src="/img/carrito.png" class='imgCarrito' width="30"></a>
+        <thead>
+            <tr style='border:1px solid black'>
 
-                        <a href="/detalles/<%=producto[u].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a>
-                    </td>
-                </tr> 
-                <% } %>
-            </tbody>
-        </table>
-        <%for(let l = 0 ; l < producto.length; l++){%>
-        <ul class='ULtabla3'>
-            <li class='LItabla3'><img src="<%= producto[l].imagen_url %>" style='width:40%;'></li>
-            <li class='LItabla3'><span>Nombre: </span><span><%= producto[l].nombre %></span></li>
-            <li class='LItabla3'><span>Codigo: </span><span><%= producto[l].codigo %></span> </li>
-            <li class='LItabla3'><span>Precio: </span><span style='color:green'><%= producto[l].precio %> $</span> </li>
-            <li class='LItabla3'><span>Descripcion: </span><span><%= producto[l].descripcion %></span></li>
-            <li class='LItabla3'><span>Calidad: </span><span><%= producto[l].calidad %></span></li>
-            <li class='LItabla3'><span>Cantidad: </span><span><%= producto[l].cantidad %></span></li>
-            <li class='LItabla3'><span>Categoria: </span><span><%= producto[l]. categoria_id %></span></li>
-            <li class='LItabla3'>
+                <th class='column'>Imagen</th>
+                <th class='column'>Nombre</th>
+                <th class='column'>Codigo</th>
+                <th class='column'>Precio</th>
+                <th class='column'>Descripcion</th>
+                <th class='column'>Calidad</th>
+                <th class='column'>Cantidad</th>
+                <th class='column'>Categoria</th>
+                <th class='column'>Opciones</th>
 
-                <div style='display:flex;justify-content:center;align-items:center;width:35%;'>
+            </tr>
+        </thead>
 
-                  <a href="/comprar/<%=producto[l].producto_id%>"><img src="/img/carrito.png" width="35"></a>
+        <tbody>
+            <%for(let u = 0;u < producto.length;u++){%>
+            <tr class='tr' style='border:1px solid black'><!--ul-->
+                <!--li-->
+                <td class='column'><img src="<%= producto[u].imagen_url %>" style='width:100%;height:17vh'></td>
+                <td class='column'><%= producto[u].nombre %></td>
+                <td class='column'><%= producto[u].codigo %></td>
+                <td class='column'><%= producto[u].precio %></td>
+                <td class='column'><%= producto[u].descripcion %></td>
+                <td class='column'><%= producto[u].calidad %></td>
+                <td class='column'><%= producto[u].cantidad %></td>
+                <td class='column'><%= producto[u].categoria_id %></td>
+                <td>
+                    <a href="/comprar/<%=producto[u].producto_id%>"><img src="/img/carrito.png" class='imgCarrito' width="30"></a>
 
-                </div>
+                    <a href="/detalles/<%=producto[u].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" width="30"></a>
+                </td>
+            </tr> 
+            <% } %>
+        </tbody>
+    </table>
+    <%for(let l = 0 ; l < producto.length; l++){%>
+    <ul class='ULtabla3'>
+        <li class='LItabla3'><img src="<%= producto[l].imagen_url %>" style='width:40%;'></li>
+        <li class='LItabla3'><span>Nombre: </span><span><%= producto[l].nombre %></span></li>
+        <li class='LItabla3'><span>Codigo: </span><span><%= producto[l].codigo %></span> </li>
+        <li class='LItabla3'><span>Precio: </span><span style='color:green'><%= producto[l].precio %> $</span> </li>
+        <li class='LItabla3'><span>Descripcion: </span><span><%= producto[l].descripcion %></span></li>
+        <li class='LItabla3'><span>Calidad: </span><span><%= producto[l].calidad %></span></li>
+        <li class='LItabla3'><span>Cantidad: </span><span><%= producto[l].cantidad %></span></li>
+        <li class='LItabla3'><span>Categoria: </span><span><%= producto[l]. categoria_id %></span></li>
+        <li class='LItabla3'>
 
-                <div style='display:flex;justify-content:center;align-items:center;width:20%;'>
-                   <a href="/detalles/<%=producto[l].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" style='width:100%;'></a>
-               </div>
+            <div style='display:flex;justify-content:center;align-items:center;width:35%;'>
 
-           </li>
-       </ul>
-       <% } %>
-   </div>
+              <a href="/comprar/<%=producto[l].producto_id%>"><img src="/img/carrito.png" width="35"></a>
+
+          </div>
+
+          <div style='display:flex;justify-content:center;align-items:center;width:20%;'>
+             <a href="/detalles/<%=producto[l].producto_id%>" style='margin-top:7px;margin-left:8px;'><img src="/img/lupa.png" style='width:100%;'></a>
+         </div>
+
+     </li>
+ </ul>
+ <% } %>
+</div>
 
 </div>
 </div>
@@ -173,35 +249,36 @@
 
 </section>
 <script type="text/javascript">
-     fetch('/transaction')
-    .then(res=>res.json())
-    .then(respuesta=>{
-        if(respuesta.message !== false){
-         console.log(respuesta);
-           Swal.fire(respuesta.transaction.message)
+   fetch('/transaction')
+   .then(res=>res.json())
+   .then(respuesta=>{
+    if(respuesta.message !== false){
+       console.log(respuesta);
+       Swal.fire(respuesta.transaction.message)
 
-           .then(() =>{
+       .then(() =>{
         // Aquí la alerta se ha cerrado
-            console.log("Alerta cerrada");
-            fetch('/eliminarTransaction')
-            .then(res=> res.json())
-            .then(respuesta2=>{
+        console.log("Alerta cerrada");
+        fetch('/eliminarTransaction')
+        .then(res=> res.json())
+        .then(respuesta2=>{
             console.log(`Message : ${respuesta2.message}`);
-            })
-            .catch(error => {
+        })
+        .catch(error => {
                console.error('*_*/-[Error]-/*_*:', error);
-             });
-        }); 
+        });
+    }); 
 
-           console.log(respuesta.transaction.message,'respuesta del server');  
-       }else{
-        console.log('No se recibio respuesta of the transaction'); 
-    }
+       console.log(respuesta.transaction.message,'respuesta del server');  
+   }else{
+    console.log('No se recibio respuesta of the transaction'); 
+}
 
 })
 </script>
 <!-- Core theme JS-->
 <script src="/js/script.js"></script>
+<script type="text/javascript" src='/js/puntuaciones.js'></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

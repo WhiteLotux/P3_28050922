@@ -775,7 +775,7 @@ function enviarEmailRecuperacion(req,res){
  res.cookie('securityToken',token, { httpOnly: true, secure: true });
 
   // Crear la URL de recuperación de contraseña
-  const recoveryURL = `https://weblineamaikol.onrender.com/restablecer-contrasena?token=${token}?userName=${UserName}`;
+  const recoveryURL = `https://webventas.onrender.com/restablecer-contrasena?token=${token}?userName=${UserName}`;
 
   // Enviar el correo electrónico de recuperación de contraseña
   const mailOptions = {
